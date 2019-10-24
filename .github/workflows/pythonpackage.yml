@@ -23,7 +23,6 @@ jobs:
         pip freeze > requirements.txt
     - name: Lint with flake8
       run: |
-        pip install pytest-html
         pip install flake8
         # stop the build if there are Python syntax errors or undefined names
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
@@ -33,4 +32,4 @@ jobs:
     - name: Test with pytest
       run: |
         pip install pytest
-        pytest --html=report.html
+        pytest
